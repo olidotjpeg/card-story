@@ -19,6 +19,7 @@
     "jsdom": "^22.1.0",
     "svelte": "^4.0.3",
     "svelte-check": "^3.4.4",
+    "svelte-motion": "github:olidotjpeg/svelte-motion",
     "tslib": "^2.6.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.0",
