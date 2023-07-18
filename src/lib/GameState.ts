@@ -1,3 +1,5 @@
+import { dealHand } from "./CardStack";
+
 export type GameState = 'ENTRY' | 'MIDDLE' | 'LEFT' | 'RIGHT' | 'END';
 
 export let gameState: GameState = 'ENTRY';
@@ -17,10 +19,14 @@ export function updateGameState(newGameState: GameState): GameState {
     return gameState;
 }
 
-export function completeGame() {
-    alert('You Beat the Game');
+export function completeGame(): void {
+    alert('You Beat the Game, and we are resetting');
+    gameState = 'ENTRY';
+    dealHand();
 }
 
 export function resetGame(): void {
+    alert('You lost, game has been reset');
     gameState = 'ENTRY';
+    dealHand();
 }
