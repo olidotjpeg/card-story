@@ -61,19 +61,3 @@ const gameArray: Card[] = [
 
 export const cards: Writable<Card[]> = writable([]);
 export const allCards: Writable<Card[]> = writable(gameArray);
-
-
-// Helpers
-export function findSingleCard(id: number) {
-    let singleCard: Card | undefined;
-
-    console.log(id)
-
-    allCards.subscribe((cards: Card[]) => {
-        singleCard = cards.find((card) => card.id === id)
-    });
-
-    console.log(singleCard);
-
-    return singleCard;
-}

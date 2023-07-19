@@ -1,18 +1,20 @@
 <script lang="ts">
-    import { Motion, M, useMotionValue, useTransform } from "svelte-motion";
+    import { onMount } from "svelte";
+    import { M } from "svelte-motion";
     import type { PanInfo } from "svelte-motion";
     import { cards } from '../sdk/cards.store';
-    import {dealHand, swipe} from '../sdk/CardStack';
+    import {drawFirst, swipe} from '../sdk/CardStack';
     import { useState } from "../hooks/useState";
 
     let dealtCards;
-    let area;
 
     cards.subscribe((value) => {
         dealtCards = value;
     });
 
-    cards.set(dealHand())
+    onMount(async () => {
+        cards.set([drawFirst()])
+    });
 
     const [leaveX, setLeaveX] = useState(0);
     const [leaveY, setLeaveY] = useState(0);
