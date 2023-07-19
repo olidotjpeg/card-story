@@ -1,13 +1,13 @@
-import { readable } from 'svelte/store';
+import { readable, type Readable } from 'svelte/store'
 
-function useState(initValue){
-    let setValue
-    const nameStore = readable(initValue, set => {
-	    setValue = set
-    })
-    nameStore.subscribe(value=>{})
-    return [nameStore,setValue]
-}
-export {
-    useState
+export function useState<T>(initValue: T) {
+  let setValue: (value: T) => void
+
+  const nameStore: Readable<T> = readable(initValue, set => {
+    setValue = set
+  })
+
+  nameStore.subscribe(_ => {})
+
+  return [nameStore, setValue]
 }
