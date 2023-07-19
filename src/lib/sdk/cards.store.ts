@@ -59,5 +59,5 @@ const gameArray: Card[] = [
     }
 ]
 
-export const cards: Writable<Card[]> = writable([]);
+export const cardHand: Writable<Card[]> = writable([]);
 export const allCards: Writable<Card[]> = writable(gameArray);

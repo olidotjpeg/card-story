@@ -2,18 +2,18 @@
     import { onMount } from "svelte";
     import { M } from "svelte-motion";
     import type { PanInfo } from "svelte-motion";
-    import { cards } from '../sdk/cards.store';
+    import { cardHand } from '../sdk/cards.store';
     import {drawFirst, swipe} from '../sdk/CardStack';
     import { useState } from "../hooks/useState";
 
     let dealtCards;
 
-    cards.subscribe((value) => {
+    cardHand.subscribe((value) => {
         dealtCards = value;
     });
 
     onMount(async () => {
-        cards.set([drawFirst()])
+        cardHand.set([drawFirst()])
     });
 
     const [leaveX, setLeaveX] = useState(0);
@@ -25,18 +25,18 @@
 
         if (info.offset.y < -100 && card.options.length >= 3) {
             setLeaveY(-2000);
-            cards.set(swipe(card, 'UP'));
+            cardHand.set(swipe(card, 'UP'));
             return;
         }
 
         if (info.offset.x > 100) {
             setLeaveX(1000);
-            cards.set(swipe(card, 'RIGHT'));
+            cardHand.set(swipe(card, 'RIGHT'));
         }
 
         if (info.offset.x < -100) {
             setLeaveX(-1000);
-            cards.set(swipe(card, 'LEFT'));
+            cardHand.set(swipe(card, 'LEFT'));
         }
     };
 </script>
