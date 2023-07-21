@@ -21,8 +21,21 @@
                 }
               }
             }
+          },
+          {
+            "id": "d1430c99c30d5c6f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Game Design.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -88,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.canvas",
+                "file": "Game Design.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Untitled.canvas",
+                "file": "Game Design.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.canvas"
+                "file": "Game Design.md"
               }
             }
           }
@@ -149,6 +162,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "672580056e293e0a",
-  "lastOpenFiles": []
+  "active": "d1430c99c30d5c6f",
+  "lastOpenFiles": [
+    "Untitled.canvas",
+    "Game Design.md"
+  ]
 }
